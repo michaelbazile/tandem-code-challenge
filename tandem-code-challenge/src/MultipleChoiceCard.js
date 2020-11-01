@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Card,
   styled,
@@ -32,7 +32,7 @@ export const MultipleChoiceCard = ({
   setNumberOfCorrectAnswers,
   numberOfCorrectAnswers,
   setNumberOfQuestionsRemaining,
-  numberOfQuestionsRemaining
+  numberOfQuestionsRemaining,
 }) => {
   const classes = useStyles();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -82,7 +82,9 @@ export const MultipleChoiceCard = ({
 
                         setCurrentQuestion(questions[currentIndex + 1]);
                         setCurrentIndex(currentIndex + 1);
-                        setNumberOfQuestionsRemaining(numberOfQuestionsRemaining - 1)
+                        setNumberOfQuestionsRemaining(
+                          numberOfQuestionsRemaining - 1
+                        );
                       }}
                     >
                       {answerChoice}

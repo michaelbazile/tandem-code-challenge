@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import data from "./Apprentice_TandemFor400_Data.json";
 import { MultipleChoiceCard } from "./MultipleChoiceCard.js";
 import { FinalScoreCard } from "./FinalScoreCard.js";
@@ -9,7 +9,7 @@ const randomQuestions = () => shuffle(data).slice(0, 10);
 export const MainBoard = () => {
   const [numberOfQuestionsRemaining, setNumberOfQuestionsRemaining] = useState(10);
   const [numberOfCorrectAnswers, setNumberOfCorrectAnswers] = useState(0);
-  const [questions, setQuestions] = useState(randomQuestions());
+  const questions = randomQuestions();
 
   return !numberOfQuestionsRemaining ? (
     <FinalScoreCard finalScore={numberOfCorrectAnswers} />
